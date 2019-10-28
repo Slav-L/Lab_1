@@ -47,7 +47,7 @@ if(isset($_POST['button']))
 if((is_numeric($_POST['day']) == true)
 && ($_POST['day'] > 0 && $_POST['day'] <= 31)
 && (is_numeric($_POST['Year']) == true)
-&& ($_POST['Year'] > 0)  )
+&& ($_POST['Year'] > 1000 && $_POST['Year'] < 2016)  )
    
    {
         $day =  $_POST['day'];
@@ -59,25 +59,7 @@ if  ($day < 10)
 else
 {$day = $day[0] + $day[1];}
    
-
-
-
-if($year < 10)
-  {$year=$year;} 
-  
-elseif($year < 100 && $year >=10)
-  {$year=$year[0] + $year[1];}
-  
-elseif($year < 1000 && $year>=100)
-  {$year=$year[0]+$year[1]+$year[2];}
-  
-else
-  {$year=$year[0] + $year[1] + $year[2] + $year[3];}
-
-
-
-
-$rezult = $day + $year + $month[0] + $month[1];
+$rezult = $day + $year[0] + $year[1] + $year[2] + $year[3] + $month[0] + $month[1];
         
 $rezult_2 = (string)$rezult;
 
